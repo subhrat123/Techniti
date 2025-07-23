@@ -1,0 +1,30 @@
+/* .register-button {
+  background: linear-gradient(145deg, #b87333, #d98e48, #a65b1a);
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.register-button:hover {
+  background: linear-gradient(145deg, #d98e48, #b87333, #8f4c15);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+} */
+
+@font-face {
+  font-family: 'Samarkan';
+  src: url('/src/assets/fonts/Samarkan.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Samarkan', sans-serif;
+}
