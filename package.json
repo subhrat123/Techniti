@@ -12,6 +12,7 @@
   "dependencies": {
     "@fontsource/jaini-purva": "^5.2.5",
     "@fontsource/medievalsharp": "^5.2.5",
+    "@fontsource/poor-story": "^5.2.6",
     "framer-motion": "^12.5.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

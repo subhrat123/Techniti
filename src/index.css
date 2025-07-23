@@ -1,2 +1,39 @@
-@import url('https://fonts.googleapis.com/css2?family=Kadwa:wght@400;700&display=swap');
+    @import url("https://fonts.googleapis.com/css2?family=Kadwa:wght@400;700&display=swap");
+    @import url('https://fonts.googleapis.com/css2?family=Amita:wght@400;700&display=swap');
 
+    .neeti {
+    font-family: "Amita", serif;
+    font-weight: 700;
+    font-style: normal;
+    }
+
+    /* Add smooth scrolling */
+    html {
+        scroll-behavior: smooth;
+    }
+
+    /* Better button animations */
+    .hover-scale {
+        transition: transform 0.3s ease;
+    }
+    .hover-scale:hover {
+        transform: scale(1.05);
+    }
+
+    /* Add this to your CSS file for the 3D card flip effect */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden; /* For Safari */
+}
+
+.transform-rotate-y-180 {
+  transform: rotateY(180deg);
+}

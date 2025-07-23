@@ -1,6 +1,19 @@
+/* Ensure you have this to prevent text selection */
 .noselect {
-    user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Safari */
+    -khtml-user-select: none;    /* Konqueror HTML */
+    -moz-user-select: none;      /* Old versions of Firefox */
+    -ms-user-select: none;       /* Internet Explorer/Edge */
+    user-select: none;           /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+
+/* New class for the card hover glow effect */
+.card-glow {
+    position: relative;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.card-glow:hover {
+    border-color: #FFD700; /* Golden glow color */
 }

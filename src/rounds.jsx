@@ -3,67 +3,87 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 import foot from "./assets/foot2.png";
 import bgImage from "./assets/bg6.png";
 import { motion } from "framer-motion";
-import "@fontsource/medievalsharp"; // Import MedievalSharp font
-import "./rounds.css"; // Import custom CSS file for additional styling
+import "@fontsource/medievalsharp";
+import "./rounds.css"; // Make sure to include the CSS file
 
 const Rounds = () => {
     const rounds = [
-        {
-            title: "Vidyayuddha (The Battle of Knowledge)",
-            description: "Test your logical and analytical skills through a series of challenging questions.",
-            time: "10:00 AM - 11:00 AM",
-            position: { top: "30%", left: "15%" }
-        },
-        {
-            title: "Abhijnana (Test Of Recognition)",
-            description: "Identify, decode, and recognize patterns to progress in the challenge.",
-            time: "11:30 AM - 12:30 PM",
-            position: { top: "50%", left: "40%" }
-        },
-        {
-            title: "Sanjeevanayuddha (The Battle of Survival)",
-            description: "A face-off coding battle where only the strongest can advance.",
-            time: "2:00 PM - 3:30 PM",
-            position: { top: "50%", left: "65%" }
-        },
-        {
-            title: "Vibhrampatha (The Path Of Illusions)",
-            description: "Navigate through a maze of illusions, debugging and problem-solving to escape.",
-            time: "4:00 PM - 5:30 PM",
-            position: { top: "70%", left: "90%" }
-        }
+        { title: "Vidyayuddha (The Battle of Knowledge)", description: "Test your logical and analytical skills in this challenging opening round.", time: "10:00 AM - 11:00 AM", position: { top: "20%", left: "15%" } },
+        { title: "Abhijnana (Test Of Recognition)", description: "Identify, decode, and recognize patterns to prove your sharp intellect.", time: "11:30 AM - 12:30 PM", position: { top: "45%", left: "40%" } },
+        { title: "Sanjeevanayuddha (The Battle of Survival)", description: "A final face-off coding battle where only the most resilient will triumph.", time: "2:00 PM - 3:30 PM", position: { top: "60%", left: "68%" } }
     ];
 
+    // Animation variants for the main container to orchestrate children animations
+    const containerVariants = {
+        hidden: {},
+        visible: {
+            transition: {
+                staggerChildren: 0.8, // Time between each round's animation
+            },
+        },
+    };
+
+    // Variants for each round (marker + card)
+    const roundItemVariants = {
+        hidden: { opacity: 0, scale: 0.5 },
+        visible: {
+            opacity: 1,
+            scale: 1,
+            transition: {
+                duration: 0.8,
+                ease: "easeOut",
+            },
+        },
+    };
+
+    // Variants for the footprints path
+    const footprintPathVariants = {
+        hidden: {},
+        visible: {
+            transition: {
+                staggerChildren: 0.15, // Animate each footprint with a small delay
+            },
+        },
+    };
+
+    // Variants for individual footprints
+    const footprintVariants = {
+        hidden: { opacity: 0, scale: 0 },
+        visible: {
+            opacity: 1,
+            scale: 1,
+            transition: {
+                duration: 0.5,
+                ease: "easeOut",
+            },
+        },
+    };
+
+    // Helper function to calculate rotation angle for footprints
     const getRotationAngle = (start, end) => {
         const dx = parseFloat(end.left) - parseFloat(start.left);
         const dy = parseFloat(end.top) - parseFloat(start.top);
         return Math.atan2(dy, dx) * (180 / Math.PI);
     };
 
-    const generateFootprints = (start, end, startIndex) => {
+    // Function to generate animated footprints between two points
+    const generateFootprints = (start, end, index) => {
         const footprints = [];
         const steps = 8;
         const rotation = getRotationAngle(start, end);
 
         for (let i = 1; i <= steps; i++) {
-            const top = parseFloat(start.top) + ((parseFloat(end.top) - parseFloat(start.top)) * i / steps) + "%";
-            const left = parseFloat(start.left) + ((parseFloat(end.left) - parseFloat(start.left)) * i / steps) + "%";
+            const top = `${parseFloat(start.top) + ((parseFloat(end.top) - parseFloat(start.top)) * i / steps)}%`;
+            const left = `${parseFloat(start.left) + ((parseFloat(end.left) - parseFloat(start.left)) * i / steps)}%`;
 
             footprints.push(
                 <motion.img
-                    key={`footprint-${startIndex}-${i}`}
+                    key={`footprint-${index}-${i}`}
                     src={foot}
                     alt="footprint"
-                    className="absolute w-20 h-20"
-                    style={{
-                        top,
-                        left,
-                        transform: `translate(-50%, -50%) rotate(${rotation}deg)`,
-                        opacity: 0.8
-                    }}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 1, delay: (startIndex * 6 + i) * 0.5 }}
+                    className="absolute w-16 h-16 md:w-20 md:h-20 opacity-70"
+                    style={{ top, left, transform: `translate(-50%, -50%) rotate(${rotation}deg)` }}
+                    variants={footprintVariants}
                 />
             );
         }
@@ -72,35 +92,68 @@ const Rounds = () => {
 
     return (
         <section id="rounds">
-            <div
-                className="h-screen w-full flex flex-col items-center justify-center text-center bg-cover bg-center select-none noselect"
-                style={{ backgroundImage: `url(${bgImage})` }}
-            >
-                <h2 className="text-4xl font-extrabold text-[#f4e1c1] mb-6 border-b-2 border-[#D2691E] pb-2 font-[MedievalSharp] mt-12">
+            <div className="min-h-screen w-full flex flex-col items-center justify-start text-center bg-cover bg-center select-none noselect py-10 overflow-hidden"
+                style={{ backgroundImage: `url(${bgImage})` }}>
+                
+                <motion.h2 
+                    className="text-4xl md:text-5xl font-extrabold text-[#f4e1c1] border-b-4 border-[#D2691E] font-[MedievalSharp] mt-14"
+                    initial={{ opacity: 0, y: -50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.5 }}
+                    transition={{ duration: 1, ease: "easeOut" }}
+                >
                     Karya Yatra Marg
-                </h2>
+                </motion.h2>
 
-                <div className="relative w-full h-[700px] bg-center bg-cover" style={{ backgroundImage: "url('/ancient-map-texture.jpg')" }}>
+                <motion.div 
+                    className="relative w-full h-[800px]"
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.2 }}
+                >
+                    {/* Render Footprints Paths */}
                     {rounds.map((round, index) => (
-                        index < rounds.length - 1 && generateFootprints(round.position, rounds[index + 1].position, index)
+                        index < rounds.length - 1 && (
+                            <motion.div key={`path-${index}`} variants={footprintPathVariants}>
+                                {generateFootprints(round.position, rounds[index + 1].position, index)}
+                            </motion.div>
+                        )
                     ))}
 
+                    {/* Render Rounds */}
                     {rounds.map((round, index) => (
-                        <div
+                        <motion.div
                             key={index}
                             className="absolute flex flex-col items-center"
                             style={{ top: round.position.top, left: round.position.left, transform: "translate(-50%, -50%)" }}
+                            variants={roundItemVariants}
                         >
-                            <FaMapMarkerAlt className="text-red-600 text-3xl drop-shadow-lg animate-bounce" />
-
-                            <div className="bg-[#FFF8DC] p-4 rounded-lg shadow-lg w-52 text-center border-2 border-[#8B4513] mt-2">
+                            <motion.div
+                                animate={{
+                                    scale: [1, 1.1, 1],
+                                    transition: { duration: 2, repeat: Infinity, ease: "easeInOut" }
+                                }}
+                            >
+                                <FaMapMarkerAlt className="text-red-600 text-5xl drop-shadow-lg" />
+                            </motion.div>
+                            
+                            <motion.div 
+                                className="bg-[#FFF8DC] p-4 rounded-lg shadow-lg w-56 text-center border-2 border-[#8B4513] mt-1 card-glow"
+                                whileHover={{ 
+                                    scale: 1.1, 
+                                    y: -5,
+                                    boxShadow: "0px 15px 30px rgba(0,0,0,0.5)",
+                                    transition: { duration: 0.3 }
+                                }}
+                            >
                                 <h3 className="text-lg font-bold text-[#4B2C20] font-[MedievalSharp]">{round.title}</h3>
-                                <p className="text-[#5A3E2B] italic text-sm font-serif">{round.description}</p>
+                                <p className="text-[#5A3E2B] italic text-sm font-serif my-2">{round.description}</p>
                                 <span className="text-sm text-[#654321] font-medium">{round.time}</span>
-                            </div>
-                        </div>
+                            </motion.div>
+                        </motion.div>
                     ))}
-                </div>
+                </motion.div>
             </div>
         </section>
     );

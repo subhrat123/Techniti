@@ -1,77 +1,77 @@
 import "@fontsource/medievalsharp";
 import React from "react";
 import { FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const Footer = () => {
+    
+    const socialIconVariants = {
+        hover: {
+            scale: 1.2,
+            color: "#FFD700",
+            transition: { duration: 0.3 },
+        },
+        tap: { scale: 0.9 },
+    };
+
+    const footerVariants = {
+        hidden: { y: 100, opacity: 0 },
+        visible: {
+            y: 0,
+            opacity: 1,
+            transition: { duration: 0.8, ease: "easeOut" },
+        },
+    };
+
     return (
-        <section
+        <motion.section
             id="footer"
-            className="bg-[#4d2407] border-t-2 border-[#cf8239] text-[#F4E1C1] py-6"
+            className="bg-[#4d2407] border-t-2 border-[#cf8239] text-[#F4E1C1] py-8"
             style={{ fontFamily: "'MedievalSharp', cursive" }}
+            variants={footerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
         >
-            <footer className="container mx-auto text-center">
+            <footer className="container mx-auto text-center px-4">
                 <h2 className="text-2xl font-bold text-[#FFD700] drop-shadow-lg">
-                    ⚔️ Technical Event ⚔️
+                    ⚔️ Techनीती ⚔️
                 </h2>
-                <p className="text-[#E6C28B] text-sm mt-2">
+                <p className="text-[#E6C28B] text-sm mt-2 max-w-lg mx-auto">
                     A legendary coding battle filled with logic, scripting, face-offs, and illusions.
                 </p>
 
                 {/* Navigation Links */}
                 <div className="mt-4 flex justify-center space-x-6">
-                    <a href="#home" className="hover:underline text-[#FFD700]">
-                        Home
-                    </a>
-                    <a href="#rounds" className="hover:underline text-[#FFD700]">
-                        Rounds
-                    </a>
-                    <a href="#contact" className="hover:underline text-[#FFD700]">
-                        Contact
-                    </a>
-                    <a href="#register" className="hover:underline text-[#FFD700]">
-                        Register
-                    </a>
+                    <motion.a href="#home" className="hover:underline text-[#FFD700]" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>Home</motion.a>
+                    <motion.a href="#rounds" className="hover:underline text-[#FFD700]" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>Rounds</motion.a>
+                    <motion.a href="#contact" className="hover:underline text-[#FFD700]" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>Contact</motion.a>
                 </div>
 
                 {/* Social Media Links */}
                 <div className="mt-6 flex justify-center space-x-6">
-                    <a
-                        href="https://www.instagram.com/codingclub.rscoe?igsh=cXBsN2dpbDRyMW05&utm_source=qr"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-[#E6C28B] hover:text-[#FFD700] transition duration-300"
-                    >
-                        <FaInstagram size={24} />
-                    </a>
-                    <a
-                        href="https://www.linkedin.com/company/coding-club-rscoe/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-[#E6C28B] hover:text-[#FFD700] transition duration-300"
-                    >
-                        <FaLinkedin size={24} />
-                    </a>
-                    <a
-                        href="https://www.youtube.com/channel/UCw8qokuFX0z-1ePJ4Q3Rh8A"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-[#E6C28B] hover:text-[#FFD700] transition duration-300"
-                    >
-                        <FaYoutube size={24} />
-                    </a>
+                    <motion.a href="https://www.instagram.com/codingclub.rscoe" target="_blank" rel="noopener noreferrer" className="text-[#E6C28B]" variants={socialIconVariants} whileHover="hover" whileTap="tap">
+                        <FaInstagram size={28} />
+                    </motion.a>
+                    <motion.a href="https://in.linkedin.com/company/coding-club-rscoe/" target="_blank" rel="noopener noreferrer" className="text-[#E6C28B]" variants={socialIconVariants} whileHover="hover" whileTap="tap">
+                        <FaLinkedin size={28} />
+                    </motion.a>
+                    <motion.a href="https://www.youtube.com/@codingclub-rscoe" target="_blank" rel="noopener noreferrer" className="text-[#E6C28B]" variants={socialIconVariants} whileHover="hover" whileTap="tap">
+                        <FaYoutube size={28} />
+                    </motion.a>
                 </div>
 
                 {/* Mention Coding Club */}
-                <p className="mt-4 text-[#E6C28B] text-sm">
+                <p className="mt-6 text-[#E6C28B] text-sm">
                     Proudly organized by <span className="text-[#FFD700] font-semibold">Coding Club JSPM RSCOE</span>
                 </p>
 
                 {/* Copyright Notice */}
-                <div className="mt-4 text-[#E6C28B] text-sm">
-                    © {new Date().getFullYear()} Technical Event. All Rights Reserved.
+                <div className="mt-4 text-[#E6C28B] text-xs opacity-70">
+                    © {new Date().getFullYear()} Techनीती. All Rights Reserved.
                 </div>
             </footer>
-        </section>
+        </motion.section>
     );
 };
 
