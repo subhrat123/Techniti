@@ -35,7 +35,14 @@ const Footer = () => {
         >
             <footer className="container mx-auto text-center px-4">
                 <h2 className="text-2xl font-bold  drop-shadow-lg">
-                    ⚔️ Techनीती ⚔️
+                    ⚔️ <div className="inline-flex items-baseline select-none">
+          <span className="font-[MedievalSharp] text-32l tracking-tight">
+            Tech
+          </span>
+          <span className="text-32l font-[MedievalSharp] tracking-tight">
+            Neeti
+          </span>
+        </div> ⚔️
                 </h2>
                 <p className="text-[#E6C28B] text-sm mt-2 max-w-lg mx-auto">
                     A legendary coding battle filled with logic, scripting, face-offs, and illusions.
@@ -68,7 +75,7 @@ const Footer = () => {
 
                 {/* Copyright Notice */}
                 <div className="mt-4 text-[#E6C28B] text-xs opacity-70">
-                    © {new Date().getFullYear()} Techनीती. All Rights Reserved.
+                    © {new Date().getFullYear()} TechNeeti. All Rights Reserved.
                 </div>
             </footer>
         </motion.section>
