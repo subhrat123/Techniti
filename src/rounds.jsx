@@ -33,7 +33,7 @@ const Rounds = () => {
         hidden: {},
         visible: {
             transition: {
-                staggerChildren: 0.8,
+                staggerChildren: 0.8, // Time between each round's animation
             },
         },
     };
@@ -56,7 +56,7 @@ const Rounds = () => {
         hidden: {},
         visible: {
             transition: {
-                staggerChildren: 0.15,
+                staggerChildren: 0.15, // Animate each footprint with a small delay
             },
         },
     };
@@ -96,7 +96,7 @@ const Rounds = () => {
                     key={`footprint-${index}-${i}`}
                     src={foot}
                     alt="footprint"
-                    className="absolute w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-16 lg:h-16 opacity-70"
+                    className="absolute w-8 h-8 md:w-10 md:h-10 lg:w-16 lg:h-16 opacity-70"
                     style={{ top, left, transform: `translate(-50%, -50%) rotate(${rotation}deg)` }}
                     variants={footprintVariants}
                 />
@@ -107,11 +107,11 @@ const Rounds = () => {
 
     return (
         <section id="rounds">
-            <div className="min-h-screen w-full flex flex-col items-center justify-start text-center bg-cover bg-center select-none noselect py-6 sm:py-8 md:py-10 overflow-x-hidden"
+            <div className="min-h-screen w-full flex flex-col items-center justify-start text-center bg-cover bg-center select-none noselect py-8 md:py-10 overflow-hidden"
                 style={{ backgroundImage: `url(${bgImage})` }}>
                 
                 <motion.h2 
-                    className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#f4e1c1] border-b-4 border-[#D2691E] font-[MedievalSharp] mt-6 sm:mt-8 md:mt-14"
+                    className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#f4e1c1] border-b-4 border-[#D2691E] font-[MedievalSharp] mt-8 md:mt-14"
                     initial={{ opacity: 0, y: -50 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.5 }}
@@ -121,7 +121,7 @@ const Rounds = () => {
                 </motion.h2>
 
                 <motion.div 
-                    className="relative w-full h-[500px] sm:h-[550px] md:h-[600px] lg:h-[700px] xl:h-[800px]"
+                    className="relative w-full h-[600px] md:h-[700px] lg:h-[800px]"
                     variants={containerVariants}
                     initial="hidden"
                     whileInView="visible"
@@ -150,11 +150,11 @@ const Rounds = () => {
                                     transition: { duration: 2, repeat: Infinity, ease: "easeInOut" }
                                 }}
                             >
-                                <FaMapMarkerAlt className="text-red-600 text-3xl sm:text-4xl md:text-5xl drop-shadow-lg" />
+                                <FaMapMarkerAlt className="text-red-600 text-4xl md:text-5xl drop-shadow-lg" />
                             </motion.div>
                             
                             <motion.div 
-                                className="bg-[#FFF8DC] p-3 sm:p-4 rounded-lg shadow-lg w-44 sm:w-48 md:w-56 lg:w-64 text-center border-2 border-[#8B4513] mt-1 card-glow overflow-hidden"
+                                className="bg-[#FFF8DC] p-3 md:p-4 rounded-lg shadow-lg w-48 md:w-56 lg:w-64 text-center border-2 border-[#8B4513] mt-1 card-glow"
                                 whileHover={{ 
                                     scale: 1.05, 
                                     y: -5,
@@ -162,15 +162,9 @@ const Rounds = () => {
                                     transition: { duration: 0.3 }
                                 }}
                             >
-                                <h3 className="text-sm sm:text-base md:text-lg font-bold text-[#4B2C20] font-[MedievalSharp] truncate">
-                                    {round.title}
-                                </h3>
-                                <p className="text-[#5A3E2B] italic text-xs sm:text-sm font-serif my-1 sm:my-2 truncate">
-                                    {round.description}
-                                </p>
-                                <span className="text-xs sm:text-sm text-[#654321] font-medium block">
-                                    {round.time}
-                                </span>
+                                <h3 className="text-base md:text-lg font-bold text-[#4B2C20] font-[MedievalSharp]">{round.title}</h3>
+                                <p className="text-[#5A3E2B] italic text-xs md:text-sm font-serif my-1 md:my-2">{round.description}</p>
+                                <span className="text-xs md:text-sm text-[#654321] font-medium">{round.time}</span>
                             </motion.div>
                         </motion.div>
                     ))}
