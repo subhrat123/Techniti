@@ -73,8 +73,14 @@ const Navbar = () => {
   const FloatingLogo = () => (
     <Link to="/">
       <h1 className="text-[#F4E1C1] text-2xl font-bold tracking-wide flex items-center">
-        <span className="font-[MedievalSharp] text-3xl">Tech</span>-
-        <span className="font-[Samarkan] neeti">नीती</span>
+        <div className="inline-flex items-baseline select-none">
+          <span className="font-[MedievalSharp] text-4xl tracking-tight">
+            Tech
+          </span>
+          <span className="text-4xl font-[MedievalSharp] tracking-tight">
+            Neeti
+          </span>
+        </div>
       </h1>
     </Link>
   );
@@ -93,17 +99,19 @@ const Navbar = () => {
           >
             <div className="fixed top-0 w-full bg-[#4d2407] bg-opacity-95 backdrop-blur-lg shadow-xl border-b-4 border-[#cf8239] z-50">
               <nav className="flex justify-between items-center px-6 md:px-10 py-4">
-                <Link to="/">
-                  <h1 className="text-[#F4E1C1] text-3xl font-extrabold tracking-wider drop-shadow-lg flex items-center">
-                    <span className="font-[MedievalSharp] text-4xl mr-2">
+                <h1 className="text-[#F4E1C1] text-3xl font-extrabold tracking-wider drop-shadow-lg flex items-center">
+                  <div className="inline-flex items-baseline select-none">
+                    <span className="font-[MedievalSharp] text-4xl tracking-tight">
                       Tech
                     </span>
-                    -<span className="font-[Samarkan] neeti ml-1">नीती</span>
-                    <span className="font-[Poor Story] text-sm ml-2 text-[#E6C28B] hidden md:block">
-                      (The Code Dharma)
+                    <span className="text-4xl font-[MedievalSharp] tracking-tight">
+                      Neeti
                     </span>
-                  </h1>
-                </Link>
+                  </div>
+                  <span className="font-[Poor Story] text-sm ml-2 text-[#E6C28B] hidden md:block">
+                    (The Code Dharma)
+                  </span>
+                </h1>
                 <div
                   className="hidden md:flex space-x-8 text-[#E6C28B] text-lg font-semibold items-center"
                   style={{ fontFamily: "'MedievalSharp', cursive" }}

@@ -34,7 +34,7 @@ const Footer = () => {
             viewport={{ once: true, amount: 0.3 }}
         >
             <footer className="container mx-auto text-center px-4">
-                <h2 className="text-2xl font-bold text-[#FFD700] drop-shadow-lg">
+                <h2 className="text-2xl font-bold  drop-shadow-lg">
                     ⚔️ Techनीती ⚔️
                 </h2>
                 <p className="text-[#E6C28B] text-sm mt-2 max-w-lg mx-auto">
@@ -43,9 +43,9 @@ const Footer = () => {
 
                 {/* Navigation Links */}
                 <div className="mt-4 flex justify-center space-x-6">
-                    <motion.a href="#home" className="hover:underline text-[#FFD700]" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>Home</motion.a>
-                    <motion.a href="#rounds" className="hover:underline text-[#FFD700]" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>Rounds</motion.a>
-                    <motion.a href="#contact" className="hover:underline text-[#FFD700]" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>Contact</motion.a>
+                    <motion.a href="#home" className="hover:underline " whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>Home</motion.a>
+                    <motion.a href="#rounds" className="hover:underline " whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>Rounds</motion.a>
+                    <motion.a href="#contact" className="hover:underline " whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>Contact</motion.a>
                 </div>
 
                 {/* Social Media Links */}
@@ -63,7 +63,7 @@ const Footer = () => {
 
                 {/* Mention Coding Club */}
                 <p className="mt-6 text-[#E6C28B] text-sm">
-                    Proudly organized by <span className="text-[#FFD700] font-semibold">Coding Club JSPM RSCOE</span>
+                    Proudly organized by <span className=" font-semibold">Coding Club JSPM RSCOE</span>
                 </p>
 
                 {/* Copyright Notice */}

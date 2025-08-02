@@ -45,36 +45,36 @@ const ContactUs = () => {
       <div className="absolute inset-0 bg-black bg-opacity-50"></div>
 
       <motion.div
-        className="relative z-10 backdrop-blur-md bg-white/10 border border-white/30 shadow-2xl rounded-lg p-8 w-full max-w-4xl text-[#F4E1C1] my-24"
+        className="relative z-10 backdrop-blur-md bg-white/10 border border-white/30 shadow-2xl rounded-lg p-4 md:p-8 w-full max-w-4xl text-[#F4E1C1] my-8 md:my-24"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
       >
         <motion.h2
-          className="text-4xl md:text-5xl font-bold mb-8 text-[#f4e1c1] drop-shadow-lg"
+          className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 md:mb-8 text-[#f4e1c1] drop-shadow-lg"
           variants={itemVariants}
         >
           Contact Us
         </motion.h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left ">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 text-left">
           {/* Left Column: Location and Coordinators */}
           <motion.div className="space-y-6" variants={itemVariants}>
             <div>
-              <h3 className="text-xl font-semibold text-[#E6C28B] flex items-center mb-2">
-                <FaMapMarkerAlt className="mr-3 text-2xl text-[#FFD700]" />{" "}
+              <h3 className="text-lg md:text-xl font-semibold text-[#E6C28B] flex items-center mb-2">
+                <FaMapMarkerAlt className="mr-2 md:mr-3 text-xl md:text-2xl text-[#FFD700]" />{" "}
                 Event Location
               </h3>
-              <p className="text-base">
+              <p className="text-sm md:text-base">
                 JSPM Rajarshi Shahu College of Engineering, Tathawade,
                 Pimpri-Chinchwad, Maharashtra 411033
               </p>
             </div>
 
             <div>
-              <h3 className="text-xl font-semibold text-[#E6C28B] flex items-center mb-4">
-                <FaUserFriends className="mr-3 text-2xl text-[#FFD700]" /> Event
+              <h3 className="text-lg md:text-xl font-semibold text-[#E6C28B] flex items-center mb-3 md:mb-4">
+                <FaUserFriends className="mr-2 md:mr-3 text-xl md:text-2xl text-[#FFD700]" /> Event
                 Coordinators
               </h3>
               <div className="flex flex-col space-y-4">
@@ -85,20 +85,20 @@ const ContactUs = () => {
                   initial="front"
                 >
                   <motion.div
-                    className="relative w-full h-24 preserve-3d"
+                    className="relative w-full h-20 md:h-24 preserve-3d"
                     variants={flipCardVariants}
                     transition={{ duration: 0.6 }}
                   >
                     {/* Front Side */}
-                    <div className="absolute w-full h-full backface-hidden bg-white/10 p-4 rounded-lg flex items-center">
-                      <p className="font-medium text-lg text-[#FFD700]">
+                    <div className="absolute w-full h-full backface-hidden bg-white/10 p-3 md:p-4 rounded-lg flex items-center">
+                      <p className="font-medium text-base md:text-lg">
                         Parth Kulkarni
                       </p>
                     </div>
                     {/* Back Side */}
-                    <div className="absolute w-full h-full backface-hidden bg-white/20 p-4 rounded-lg flex items-center justify-center transform-rotate-y-180">
-                      <p className="flex items-center">
-                        <FaPhone className="mr-2" /> +91 8080681792
+                    <div className="absolute w-full h-full backface-hidden bg-white/20 p-3 md:p-4 rounded-lg flex items-center justify-center transform-rotate-y-180">
+                      <p className="flex items-center text-sm md:text-base">
+                        <FaPhone className="mr-1 md:mr-2" /> +91 8080681792
                       </p>
                     </div>
                   </motion.div>
@@ -111,20 +111,20 @@ const ContactUs = () => {
                   initial="front"
                 >
                   <motion.div
-                    className="relative w-full h-24 preserve-3d"
+                    className="relative w-full h-20 md:h-24 preserve-3d"
                     variants={flipCardVariants}
                     transition={{ duration: 0.6 }}
                   >
                     {/* Front Side */}
-                    <div className="absolute w-full h-full backface-hidden bg-white/10 p-4 rounded-lg flex items-center">
-                      <p className="font-medium text-lg text-[#FFD700]">
+                    <div className="absolute w-full h-full backface-hidden bg-white/10 p-3 md:p-4 rounded-lg flex items-center">
+                      <p className="font-medium text-base md:text-lg">
                         Omanand Swami
                       </p>
                     </div>
                     {/* Back Side */}
-                    <div className="absolute w-full h-full backface-hidden bg-white/20 p-4 rounded-lg flex items-center justify-center transform-rotate-y-180">
-                      <p className="flex items-center">
-                        <FaPhone className="mr-2" /> +91 94223 08688
+                    <div className="absolute w-full h-full backface-hidden bg-white/20 p-3 md:p-4 rounded-lg flex items-center justify-center transform-rotate-y-180">
+                      <p className="flex items-center text-sm md:text-base">
+                        <FaPhone className="mr-1 md:mr-2" /> +91 94223 08688
                       </p>
                     </div>
                   </motion.div>
@@ -133,37 +133,37 @@ const ContactUs = () => {
             </div>
 
             <div>
-              <h3 className="text-xl font-semibold text-[#E6C28B] flex items-center mb-2">
-                <FaEnvelope className="mr-3 text-2xl text-[#FFD700]" /> Support
+              <h3 className="text-lg md:text-xl font-semibold text-[#E6C28B] flex items-center mb-2">
+                <FaEnvelope className="mr-2 md:mr-3 text-xl md:text-2xl text-[#FFD700]" /> Support
                 Email
               </h3>
-              <p className="font-medium text-[#FFD700]">
+              <p className="font-medium text-sm md:text-base">
                 codingclub@jspmrscoe.edu.in
               </p>
             </div>
-            <div className="mb-6 text-left" variants={itemVariants}>
-              <h3 className="text-xl font-semibold text-[#E6C28B] flex items-center mb-2">
-                <FaLocationArrow className="mr-3 text-2xl text-[#FFD700]" /> Location
+            <div className="mb-4 md:mb-6 text-left" variants={itemVariants}>
+              <h3 className="text-lg md:text-xl font-semibold text-[#E6C28B] flex items-center mb-2">
+                <FaLocationArrow className="mr-2 md:mr-3 text-xl md:text-2xl text-[#FFD700]" /> Location
               </h3>
               <a
                 href="https://maps.app.goo.gl/1693gQQtsQUcA5yw9"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#FFD700] hover:underline"
+                className="hover:underline text-blue-400 text-sm md:text-base"
               >
-                 Open Google Maps
+                Open Google Maps
               </a>
             </div>
           </motion.div>
 
           {/* Right Column: Map */}
           <motion.div variants={itemVariants}>
-            <h3 className="text-xl font-semibold text-[#E6C28B] mb-2">
+            <h3 className="text-lg md:text-xl font-semibold text-[#E6C28B] mb-2">
               Our Location on Map
             </h3>
             <div className="mt-2">
               <iframe
-                className="w-full h-96 rounded-lg border-2 border-[#FFD700]"
+                className="w-full h-64 md:h-80 lg:h-96 rounded-lg border-2 border-[#FFD700]"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3780.5712039185974!2d73.74891767499322!3d18.60123036682553!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b9b099f982ef%3A0xe4b7759f68bc9d8e!2sJSPM%20Rajarshi%20Shahu%20College%20Of%20Engineering%20Tathawade!5e0!3m2!1sen!2sin!4v1710612345678"
                 allowFullScreen
                 loading="lazy"

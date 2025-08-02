@@ -4,13 +4,28 @@ import foot from "./assets/foot2.png";
 import bgImage from "./assets/bg6.png";
 import { motion } from "framer-motion";
 import "@fontsource/medievalsharp";
-import "./rounds.css"; // Make sure to include the CSS file
+import "./rounds.css";
 
 const Rounds = () => {
     const rounds = [
-        { title: "Vidyayuddha (The Battle of Knowledge)", description: "Test your logical and analytical skills in this challenging opening round.", time: "10:00 AM - 11:00 AM", position: { top: "20%", left: "15%" } },
-        { title: "Abhijnana (Test Of Recognition)", description: "Identify, decode, and recognize patterns to prove your sharp intellect.", time: "11:30 AM - 12:30 PM", position: { top: "45%", left: "40%" } },
-        { title: "Sanjeevanayuddha (The Battle of Survival)", description: "A final face-off coding battle where only the most resilient will triumph.", time: "2:00 PM - 3:30 PM", position: { top: "60%", left: "68%" } }
+        { 
+            title: "Vidyayuddha (The Battle of Knowledge)", 
+            description: "Test your logical and analytical skills in this challenging opening round.", 
+            time: "10:00 AM - 11:00 AM", 
+            position: { top: "20%", left: "15%" } 
+        },
+        { 
+            title: "Abhijnana (Test Of Recognition)", 
+            description: "Identify, decode, and recognize patterns to prove your sharp intellect.", 
+            time: "11:30 AM - 12:30 PM", 
+            position: { top: "45%", left: "40%" } 
+        },
+        { 
+            title: "Sanjeevanayuddha (The Battle of Survival)", 
+            description: "A final face-off coding battle where only the most resilient will triumph.", 
+            time: "2:00 PM - 3:30 PM", 
+            position: { top: "60%", left: "68%" } 
+        }
     ];
 
     // Animation variants for the main container to orchestrate children animations
@@ -81,7 +96,7 @@ const Rounds = () => {
                     key={`footprint-${index}-${i}`}
                     src={foot}
                     alt="footprint"
-                    className="absolute w-16 h-16 md:w-20 md:h-20 opacity-70"
+                    className="absolute w-8 h-8 md:w-10 md:h-10 lg:w-16 lg:h-16 opacity-70"
                     style={{ top, left, transform: `translate(-50%, -50%) rotate(${rotation}deg)` }}
                     variants={footprintVariants}
                 />
@@ -92,11 +107,11 @@ const Rounds = () => {
 
     return (
         <section id="rounds">
-            <div className="min-h-screen w-full flex flex-col items-center justify-start text-center bg-cover bg-center select-none noselect py-10 overflow-hidden"
+            <div className="min-h-screen w-full flex flex-col items-center justify-start text-center bg-cover bg-center select-none noselect py-8 md:py-10 overflow-hidden"
                 style={{ backgroundImage: `url(${bgImage})` }}>
                 
                 <motion.h2 
-                    className="text-4xl md:text-5xl font-extrabold text-[#f4e1c1] border-b-4 border-[#D2691E] font-[MedievalSharp] mt-14"
+                    className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#f4e1c1] border-b-4 border-[#D2691E] font-[MedievalSharp] mt-8 md:mt-14"
                     initial={{ opacity: 0, y: -50 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.5 }}
@@ -106,7 +121,7 @@ const Rounds = () => {
                 </motion.h2>
 
                 <motion.div 
-                    className="relative w-full h-[800px]"
+                    className="relative w-full h-[600px] md:h-[700px] lg:h-[800px]"
                     variants={containerVariants}
                     initial="hidden"
                     whileInView="visible"
@@ -135,21 +150,21 @@ const Rounds = () => {
                                     transition: { duration: 2, repeat: Infinity, ease: "easeInOut" }
                                 }}
                             >
-                                <FaMapMarkerAlt className="text-red-600 text-5xl drop-shadow-lg" />
+                                <FaMapMarkerAlt className="text-red-600 text-4xl md:text-5xl drop-shadow-lg" />
                             </motion.div>
                             
                             <motion.div 
-                                className="bg-[#FFF8DC] p-4 rounded-lg shadow-lg w-56 text-center border-2 border-[#8B4513] mt-1 card-glow"
+                                className="bg-[#FFF8DC] p-3 md:p-4 rounded-lg shadow-lg w-48 md:w-56 lg:w-64 text-center border-2 border-[#8B4513] mt-1 card-glow"
                                 whileHover={{ 
-                                    scale: 1.1, 
+                                    scale: 1.05, 
                                     y: -5,
-                                    boxShadow: "0px 15px 30px rgba(0,0,0,0.5)",
+                                    boxShadow: "0px 10px 20px rgba(0,0,0,0.3)",
                                     transition: { duration: 0.3 }
                                 }}
                             >
-                                <h3 className="text-lg font-bold text-[#4B2C20] font-[MedievalSharp]">{round.title}</h3>
-                                <p className="text-[#5A3E2B] italic text-sm font-serif my-2">{round.description}</p>
-                                <span className="text-sm text-[#654321] font-medium">{round.time}</span>
+                                <h3 className="text-base md:text-lg font-bold text-[#4B2C20] font-[MedievalSharp]">{round.title}</h3>
+                                <p className="text-[#5A3E2B] italic text-xs md:text-sm font-serif my-1 md:my-2">{round.description}</p>
+                                <span className="text-xs md:text-sm text-[#654321] font-medium">{round.time}</span>
                             </motion.div>
                         </motion.div>
                     ))}
