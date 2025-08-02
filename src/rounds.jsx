@@ -9,34 +9,34 @@ import "./rounds.css"; // Make sure to include the CSS file
 const Rounds = () => {
     // Responsive positioning - different layouts for different screen sizes
     const rounds = [
-        { 
-            title: "Vidyayuddha (The Battle of Knowledge)", 
-            description: "Test your logical and analytical skills in this challenging opening round.", 
-            time: "10:00 AM - 11:00 AM", 
-            position: { 
+        {
+            title: "Vidyayuddha (The Battle of Knowledge)",
+            description: "Test your logical and analytical skills in this challenging opening round.",
+            time: "10:00 AM - 11:00 AM",
+            position: {
                 // Desktop/tablet positioning
                 desktop: { top: "20%", left: "15%" },
                 // Mobile positioning - more centered and stacked
                 mobile: { top: "15%", left: "50%" }
-            } 
+            }
         },
-        { 
-            title: "Abhijnana (Test Of Recognition)", 
-            description: "Identify, decode, and recognize patterns to prove your sharp intellect.", 
-            time: "11:30 AM - 12:30 PM", 
-            position: { 
+        {
+            title: "Abhijnana (Test Of Recognition)",
+            description: "Identify, decode, and recognize patterns to prove your sharp intellect.",
+            time: "11:30 AM - 12:30 PM",
+            position: {
                 desktop: { top: "45%", left: "40%" },
                 mobile: { top: "45%", left: "50%" }
-            } 
+            }
         },
-        { 
-            title: "Sanjeevanayuddha (The Battle of Survival)", 
-            description: "A final face-off coding battle where only the most resilient will triumph.", 
-            time: "2:00 PM - 3:30 PM", 
-            position: { 
+        {
+            title: "Sanjeevanayuddha (The Battle of Survival)",
+            description: "A final face-off coding battle where only the most resilient will triumph.",
+            time: "2:00 PM - 3:30 PM",
+            position: {
                 desktop: { top: "60%", left: "68%" },
                 mobile: { top: "75%", left: "50%" }
-            } 
+            }
         }
     ];
 
@@ -139,8 +139,8 @@ const Rounds = () => {
         <section id="rounds">
             <div className="min-h-screen w-full flex flex-col items-center justify-start text-center bg-cover bg-center select-none noselect py-10 overflow-hidden px-4"
                 style={{ backgroundImage: `url(${bgImage})` }}>
-                
-                <motion.h2 
+
+                <motion.h2
                     className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#f4e1c1] border-b-4 border-[#D2691E] font-[MedievalSharp] mt-8 sm:mt-14"
                     initial={{ opacity: 0, y: -50 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -150,7 +150,7 @@ const Rounds = () => {
                     Karya Yatra Marg
                 </motion.h2>
 
-                <motion.div 
+                <motion.div
                     className="relative w-full h-[600px] sm:h-[700px] md:h-[800px] max-w-screen-xl mx-auto"
                     variants={containerVariants}
                     initial="hidden"
@@ -162,9 +162,9 @@ const Rounds = () => {
                         index < rounds.length - 1 && (
                             <motion.div key={`path-${index}`} variants={footprintPathVariants}>
                                 {generateFootprints(
-                                    getPosition(round), 
-                                    getPosition(rounds[index + 1]), 
-                                    index, 
+                                    getPosition(round),
+                                    getPosition(rounds[index + 1]),
+                                    index,
                                     isMobile
                                 )}
                             </motion.div>
@@ -177,11 +177,12 @@ const Rounds = () => {
                         return (
                             <motion.div
                                 key={index}
-                                className="absolute flex flex-col items-center"
-                                style={{ 
-                                    top: position.top, 
-                                    left: position.left, 
-                                    transform: "translate(-50%, -50%)",
+                                className="absolute flex flex-col items-center mt-6"
+                                style={{
+                                    top: position.top,
+                                    left: position.left,
+                                    x: "-50%", // Corrected: Use x for horizontal translation
+                                    y: "-50%", // Corrected: Use y for vertical translation
                                     // Ensure cards stay within viewport on mobile
                                     maxWidth: isMobile ? "280px" : "none"
                                 }}
@@ -195,10 +196,10 @@ const Rounds = () => {
                                 >
                                     <FaMapMarkerAlt className="text-red-600 text-3xl sm:text-4xl md:text-5xl drop-shadow-lg" />
                                 </motion.div>
-                                
-                                <motion.div 
+
+                                <motion.div
                                     className="bg-[#FFF8DC] p-3 sm:p-4 rounded-lg shadow-lg w-48 sm:w-52 md:w-56 lg:w-64 text-center border-2 border-[#8B4513] mt-1 card-glow mx-2"
-                                    whileHover={{ 
+                                    whileHover={{
                                         scale: isMobile ? 1.05 : 1.1, // Less aggressive scaling on mobile
                                         y: isMobile ? -3 : -5,
                                         boxShadow: "0px 15px 30px rgba(0,0,0,0.5)",
