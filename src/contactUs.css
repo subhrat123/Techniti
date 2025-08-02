@@ -1,0 +1,76 @@
+/* Prevent text selection */
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* 3D flip card styles */
+.perspective-1000 {
+    perspective: 1000px;
+}
+
+.preserve-3d {
+    transform-style: preserve-3d;
+}
+
+.backface-hidden {
+    backface-visibility: hidden;
+}
+
+.transform-rotate-y-180 {
+    transform: rotateY(180deg);
+}
+
+/* Responsive Design */
+@media (max-width: 767px) {
+    .grid {
+        grid-template-columns: 1fr; /* Single column on mobile */
+    }
+
+    .mobile-card {
+        display: block;
+    }
+
+    .desktop-card {
+        display: none;
+    }
+
+    /* Ensure container doesn't overflow */
+    .relative.z-10 {
+        padding: 1rem;
+        margin: 1rem;
+        max-width: 100%;
+    }
+
+    /* Adjust map height for mobile */
+    iframe {
+        height: 200px;
+    }
+
+    /* Adjust font sizes for better readability */
+    h2 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.25rem;
+    }
+
+    p, a {
+        font-size: 0.875rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .mobile-card {
+        display: none;
+    }
+
+    .desktop-card {
+        display: block;
+    }
+}
