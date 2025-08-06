@@ -12,7 +12,6 @@ const Rounds = () => {
         {
             title: "Vidyayuddha (The Battle of Knowledge)",
             description: "Test your logical and analytical skills in this challenging opening round.",
-            time: "10:00 AM - 11:00 AM",
             position: {
                 // Desktop/tablet positioning
                 desktop: { top: "20%", left: "15%" },
@@ -21,23 +20,22 @@ const Rounds = () => {
             }
         },
         {
-            title: "Abhijnana (Test Of Recognition)",
-            description: "Identify, decode, and recognize patterns to prove your sharp intellect.",
-            time: "11:30 AM - 12:30 PM",
+            title: "Sanjeevanayuddha (The Battle of Survival)",
+            description: "A final face-off coding battle where only the most resilient will triumph.",
             position: {
-                desktop: { top: "45%", left: "40%" },
+                 desktop: { top: "45%", left: "40%" },
                 mobile: { top: "45%", left: "50%" }
             }
         },
         {
-            title: "Sanjeevanayuddha (The Battle of Survival)",
-            description: "A final face-off coding battle where only the most resilient will triumph.",
-            time: "2:00 PM - 3:30 PM",
+            title: "Akhandanvaya (The Unbroken Code)",
+            description: "A relentless 24-hour hackathon where creativity meets endurance, and only the most innovative solutions prevail.",
             position: {
                 desktop: { top: "60%", left: "68%" },
                 mobile: { top: "75%", left: "50%" }
             }
         }
+
     ];
 
     // Animation variants for the main container to orchestrate children animations
@@ -212,9 +210,7 @@ const Rounds = () => {
                                     <p className="text-[#5A3E2B] italic text-xs sm:text-sm font-serif my-2 leading-relaxed">
                                         {round.description}
                                     </p>
-                                    <span className="text-xs sm:text-sm text-[#654321] font-medium">
-                                        {round.time}
-                                    </span>
+                                   
                                 </motion.div>
                             </motion.div>
                         );
