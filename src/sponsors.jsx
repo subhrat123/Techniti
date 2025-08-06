@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { FaYoutube, FaInstagram } from "react-icons/fa";
 import bgImage from "./assets/bg6.png";
 import wetNjoy from "./assets/wetNjoy.jpg";
-import worqhat from "./assets/worqhat.png";
+import worqhat from "./assets/worqHat.png";
 import campusPune from "./assets/campusPune.png";
 import smashers from "./assets/Smashers.jpg";
 import engineering from "./assets/Engineering.webp";
