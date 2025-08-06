@@ -43,6 +43,24 @@ const Prizing = () => {
           </motion.div>
         ))}
       </div>
+
+      {/* Register Button */}
+      <div className="text-center mt-10">
+        <motion.a
+          href="https://forms.gle/7418PyQ8kgsJa1Vc7"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-[#8a3714ff] text-white font-[MedievalSharp] px-6 py-3 rounded-lg text-lg shadow-lg border-2 border-[#8B4513]"
+          whileHover={{
+            scale: 1.1,
+            backgroundColor: "#8a3714ff",
+            boxShadow: "0px 10px 20px rgba(0,0,0,0.4)"
+          }}
+          whileTap={{ scale: 0.95 }}
+        >
+          Register Now
+        </motion.a>
+      </div>
     </section>
   );
 };

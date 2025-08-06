@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { FaYoutube, FaInstagram } from "react-icons/fa";
 import bgImage from "./assets/bg6.png";
-import wetNjoy from "./assets/wetNjoy.jpg";
+import wetNjoy from "./assets/wetNjoy.png";
 import worqhat from "./assets/worqHat.png";
 import campusPune from "./assets/campusPune.png";
 import smashers from "./assets/Smashers.jpg";
@@ -89,6 +89,19 @@ const SponsorsSpeakers = () => {
           Our Sponsors & Speakers
         </motion.h2>
       </div>
+      
+ <div className="text-center m-8">
+        <motion.h3
+          className="text-xl sm:text-2xl md:text-3xl font-bold text-[#f4e1c1] border-b-2 border-[#D2691E] font-[MedievalSharp] inline-block mb-6"
+          initial={{ opacity: 0, y: -40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+         Our Sponsors
+        </motion.h3>
+        </div>
+      
 
       {/* Sponsors */}
       <div className="max-w-6xl mx-auto mt-10 grid grid-cols-1 sm:grid-cols-3 gap-8 px-4">
@@ -117,6 +130,7 @@ const SponsorsSpeakers = () => {
 
       {/* Speakers */}
       <div className="max-w-6xl mx-auto mt-14 px-4">
+        <div className="text-center mb-8">
         <motion.h3
           className="text-xl sm:text-2xl md:text-3xl font-bold text-[#f4e1c1] border-b-2 border-[#D2691E] font-[MedievalSharp] inline-block mb-6"
           initial={{ opacity: 0, y: -40 }}
@@ -126,6 +140,7 @@ const SponsorsSpeakers = () => {
         >
           MeetUp Speakers
         </motion.h3>
+        </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {speakers.map((speaker, index) => (
             <motion.div
