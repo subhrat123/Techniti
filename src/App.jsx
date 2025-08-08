@@ -28,6 +28,7 @@ function App() {
         <Route path="/rounds" element={<Rounds />} />
         <Route path="/sponsors" element={<SponsorsSpeakers />} />
         <Route path="/contact" element={<ContactUs />} />
+        
       </Routes>
 
       <Footer />
