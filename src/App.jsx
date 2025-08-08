@@ -4,7 +4,6 @@ import Navbar from "./navbar";
 import Landing from "./landing";
 import ContactUs from "./contactUs";
 import SponsorsSpeakers from "./sponsors";
-import Prizing from "./prising";
 import Rounds from "./rounds";
 import Footer from "./footer";
 
