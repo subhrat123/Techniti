@@ -13,14 +13,14 @@ import "@fontsource/medievalsharp";
 const SponsorsSpeakers = () => {
   const sponsors = [
     {
-      category: "Adventurous Partner",
-      name: "Wet and Joy",
+      category: "Adventure  Partner",
+      name: "Wet'n Joy",
       description: "Bringing you thrilling adventures and unforgettable experiences.",
       image: wetNjoy
     },
     {
       category: "Innovation Partner",
-      name: "Work Hat",
+      name: "WorqHat",
       description: "Empowering innovation and creativity in every step.",
       image: worqhat
     },
@@ -61,7 +61,7 @@ const SponsorsSpeakers = () => {
       instagram: "https://www.instagram.com/coding_seekho/"
     },
     {
-      name: "Mr. Sagnic Ghosh",
+      name: "Mr. Sagnik Ghosh",
       channel: "WorqHat",
       subscribers: "-",
       followers: "-",
@@ -77,7 +77,16 @@ const SponsorsSpeakers = () => {
   };
 
   return (
-    <section id="sponsors" className="py-10 bg-cover bg-center" style={{ backgroundImage: `url(${bgImage})` }}>
+   <section className="py-10 relative overflow-hidden">
+  <div
+    className="absolute inset-0 transform rotate-180 scale-x-[-1]"
+    style={{
+      backgroundImage: `url(${bgImage})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      zIndex: -1,
+    }}
+  />
       <div className="text-center">
         <motion.h2
           className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#f4e1c1] border-b-4 border-[#D2691E] font-[MedievalSharp] inline-block"
@@ -89,8 +98,8 @@ const SponsorsSpeakers = () => {
           Our Sponsors & Speakers
         </motion.h2>
       </div>
-      
- <div className="text-center m-8">
+
+      <div className="text-center m-8">
         <motion.h3
           className="text-xl sm:text-2xl md:text-3xl font-bold text-[#f4e1c1] border-b-2 border-[#D2691E] font-[MedievalSharp] inline-block mb-6"
           initial={{ opacity: 0, y: -40 }}
@@ -98,10 +107,10 @@ const SponsorsSpeakers = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-         Our Sponsors
+          Our Sponsors
         </motion.h3>
-        </div>
-      
+      </div>
+
 
       {/* Sponsors */}
       <div className="max-w-6xl mx-auto mt-10 grid grid-cols-1 sm:grid-cols-3 gap-8 px-4">
@@ -131,15 +140,15 @@ const SponsorsSpeakers = () => {
       {/* Speakers */}
       <div className="max-w-6xl mx-auto mt-14 px-4">
         <div className="text-center mb-8">
-        <motion.h3
-          className="text-xl sm:text-2xl md:text-3xl font-bold text-[#f4e1c1] border-b-2 border-[#D2691E] font-[MedievalSharp] inline-block mb-6"
-          initial={{ opacity: 0, y: -40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          MeetUp Speakers
-        </motion.h3>
+          <motion.h3
+            className="text-xl sm:text-2xl md:text-3xl font-bold text-[#f4e1c1] border-b-2 border-[#D2691E] font-[MedievalSharp] inline-block mb-6"
+            initial={{ opacity: 0, y: -40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            MeetUp Speakers
+          </motion.h3>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {speakers.map((speaker, index) => (
@@ -160,8 +169,13 @@ const SponsorsSpeakers = () => {
               <img src={speaker.image} alt={speaker.name} className="mx-auto mb-4 w-24 h-24 object-contain rounded-full" />
               <p className="text-lg font-bold text-[#4B2C20] font-[MedievalSharp]">{speaker.name}</p>
               <p className="text-sm text-[#5A3E2B] italic">{speaker.channel}</p>
-              <p className="text-xs text-[#4B2C20] mt-1">YouTube: {speaker.subscribers}</p>
-              <p className="text-xs text-[#4B2C20]">Instagram: {speaker.followers}</p>
+              <div>
+                {speaker.channel !== "WorqHat" ? (
+                  <>
+                    <p className="text-xs text-[#4B2C20] mt-1">YouTube: {speaker.subscribers}</p>
+                    <p className="text-xs text-[#4B2C20]">Instagram: {speaker.followers}</p>
+                  </>) : (<><br></br><p className="text-xs text-[#4B2C20]">Chief Executive Officer</p></>)}
+              </div>
               <div className="flex justify-center gap-4 mt-3">
                 {speaker.youtube && (
                   <a href={speaker.youtube} target="_blank" rel="noopener noreferrer">

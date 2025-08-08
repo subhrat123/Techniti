@@ -14,7 +14,7 @@ const Rounds = () => {
             description: "Test your logical and analytical skills in this challenging opening round.",
             position: {
                 // Desktop/tablet positioning
-                desktop: { top: "20%", left: "15%" },
+                desktop: { top: "20%", left: "25%" },
                 // Mobile positioning - more centered and stacked
                 mobile: { top: "15%", left: "50%" }
             }
@@ -23,15 +23,15 @@ const Rounds = () => {
             title: "Sanjeevanayuddha (The Battle of Survival)",
             description: "A final face-off coding battle where only the most resilient will triumph.",
             position: {
-                 desktop: { top: "45%", left: "40%" },
+                 desktop: { top: "45%", left: "50%" },
                 mobile: { top: "45%", left: "50%" }
             }
         },
         {
-            title: "Akhandanvaya (The Unbroken Code)",
+            title: "Ashtaprahar (The Unbroken Code)",
             description: "A relentless 24-hour hackathon where creativity meets endurance, and only the most innovative solutions prevail.",
             position: {
-                desktop: { top: "60%", left: "68%" },
+                desktop: { top: "70%", left: "75%" },
                 mobile: { top: "75%", left: "50%" }
             }
         }

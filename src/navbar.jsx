@@ -108,9 +108,6 @@ const Navbar = () => {
                       Neeti
                     </span>
                   </div>
-                  <span className="font-[Poor Story] text-sm ml-2 text-[#E6C28B] hidden md:block">
-                    (The Code Dharma)
-                  </span>
                 </h1>
                 <div
                   className="hidden md:flex space-x-8 text-[#E6C28B] text-lg font-semibold items-center"

@@ -30,10 +30,7 @@ const ContactUs = () => {
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
 
-  const flipCardVariants = {
-    front: { rotateY: 0 },
-    back: { rotateY: 180 },
-  };
+  
 
   return (
     <div
@@ -83,7 +80,7 @@ const ContactUs = () => {
                 <div className="desktop-card perspective-1000 hidden md:block">
                   <motion.div
                     className="relative w-full h-20 md:h-24 preserve-3d"
-                    variants={flipCardVariants}
+                    
                     initial="front"
                     whileHover="back"
                     transition={{ duration: 0.6 }}
@@ -114,7 +111,7 @@ const ContactUs = () => {
                 <div className="desktop-card perspective-1000 hidden md:block">
                   <motion.div
                     className="relative w-full h-20 md:h-24 preserve-3d"
-                    variants={flipCardVariants}
+                    
                     initial="front"
                     whileHover="back"
                     transition={{ duration: 0.6 }}
@@ -149,7 +146,7 @@ const ContactUs = () => {
                 Support Email
               </h3>
               <p className="font-medium text-sm md:text-base">
-                codingclub@jspmrscoe.edu.in
+                helpdesk.codingclubrscoe@gmail.com
               </p>
             </div>
 

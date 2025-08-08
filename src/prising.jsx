@@ -53,7 +53,7 @@ const Prizing = () => {
           className="bg-[#8a3714ff] text-white font-[MedievalSharp] px-6 py-3 rounded-lg text-lg shadow-lg border-2 border-[#8B4513]"
           whileHover={{
             scale: 1.1,
-            backgroundColor: "#8a3714ff",
+            backgroundColor: "#9d4925ff",
             boxShadow: "0px 10px 20px rgba(0,0,0,0.4)"
           }}
           whileTap={{ scale: 0.95 }}

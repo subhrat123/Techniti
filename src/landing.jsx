@@ -86,7 +86,7 @@ const Landing = () => {
               initial="hidden"
               animate="visible"
             >
-              <h1 className="text-6xl font-extrabold mb-4 text-[#f4e1c1] drop-shadow-md">
+              <h1 className="text-6xl font-extrabold font-[MedievalSharp] mb-4 text-[#f4e1c1] drop-shadow-md">
                 {title.map((word, index) => (
                   <motion.span
                     key={index}
@@ -114,12 +114,6 @@ const Landing = () => {
                   </span>
                 </div>
               </h1>
-              <motion.p
-                className="text-[#E6C28B] text-sm mb-2"
-                variants={itemVariants}
-              >
-                (The Code Dharma)
-              </motion.p>
             </motion.div>
 
             <motion.p
@@ -128,8 +122,7 @@ const Landing = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 1.5, duration: 1 }}
             >
-              Join us for an exciting journey of learning, competition, and
-              networking.
+              A legendary coding battle filled with logic, scripting, face-offs, and illusions.
             </motion.p>
 
             <motion.div

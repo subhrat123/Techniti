@@ -20,7 +20,6 @@ function App() {
             <Landing />
             <Rounds />
             <SponsorsSpeakers />
-            <Prizing />
             <ContactUs />
           </>
         } />
@@ -29,7 +28,6 @@ function App() {
         <Route path="/rounds" element={<Rounds />} />
         <Route path="/sponsors" element={<SponsorsSpeakers />} />
         <Route path="/contact" element={<ContactUs />} />
-        <Route path="/prizing" element={<Prizing />} />
       </Routes>
 
       <Footer />
