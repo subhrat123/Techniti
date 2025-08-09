@@ -145,7 +145,7 @@ const Rounds = () => {
                     viewport={{ once: true, amount: 0.5 }}
                     transition={{ duration: 1, ease: "easeOut" }}
                 >
-                    Karya Yatra Marg
+                    Rounds of the Battle
                 </motion.h2>
 
                 <motion.div

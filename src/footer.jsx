@@ -57,7 +57,7 @@ const Footer = () => {
 
                 {/* Social Media Links */}
                 <div className="mt-6 flex justify-center space-x-6">
-                    <motion.a href="https://www.instagram.com/codingclub.rscoe" target="_blank" rel="noopener noreferrer" className="text-[#E6C28B]" variants={socialIconVariants} whileHover="hover" whileTap="tap">
+                    <motion.a href="https://www.instagram.com/codingclubrscoe?igsh=bXM1N3Z0cG81cWVq" target="_blank" rel="noopener noreferrer" className="text-[#E6C28B]" variants={socialIconVariants} whileHover="hover" whileTap="tap">
                         <FaInstagram size={28} />
                     </motion.a>
                     <motion.a href="https://in.linkedin.com/company/coding-club-rscoe/" target="_blank" rel="noopener noreferrer" className="text-[#E6C28B]" variants={socialIconVariants} whileHover="hover" whileTap="tap">

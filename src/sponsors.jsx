@@ -52,15 +52,6 @@ const SponsorsSpeakers = () => {
       instagram: "https://instagram.com/5minutesengineering"
     },
     {
-      name: "Mr. Vikas Singh",
-      channel: "Coding Seekho",
-      subscribers: "164k",
-      followers: "667k",
-      image: codingSeekho,
-      youtube: "https://www.youtube.com/@codingseekho",
-      instagram: "https://www.instagram.com/coding_seekho/"
-    },
-    {
       name: "Mr. Sagnik Ghosh",
       channel: "WorqHat",
       subscribers: "-",
@@ -150,11 +141,11 @@ const SponsorsSpeakers = () => {
             MeetUp Speakers
           </motion.h3>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className=" flex items-center justify-center gap-4">
           {speakers.map((speaker, index) => (
             <motion.div
               key={index}
-              className="bg-[#FFF8DC] p-4 rounded-lg shadow-lg border-2 border-[#8B4513] text-center"
+              className="bg-[#FFF8DC] w-64 h-80 p-4 rounded-lg shadow-lg border-2 border-[#8B4513] text-center"
               variants={cardVariants}
               initial="hidden"
               whileInView="visible"
