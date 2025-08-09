@@ -24,7 +24,7 @@ const Rounds = () => {
             description: "A final face-off coding battle where only the most resilient will triumph.",
             position: {
                  desktop: { top: "45%", left: "50%" },
-                mobile: { top: "45%", left: "50%" }
+                mobile: { top: "48%", left: "50%" }
             }
         },
         {
@@ -32,7 +32,7 @@ const Rounds = () => {
             description: "A relentless 24-hour hackathon where creativity meets endurance, and only the most innovative solutions prevail.",
             position: {
                 desktop: { top: "70%", left: "75%" },
-                mobile: { top: "75%", left: "50%" }
+                mobile: { top: "85%", left: "50%" }
             }
         }
 
